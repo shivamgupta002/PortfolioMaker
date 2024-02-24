@@ -72,7 +72,7 @@ const Form = () => {
         aboutMe,
       });
       // .then((res) => {
-      //   history("/employees");
+      //   history("/templates");
       // });
     } catch (e) {
       alert(e.message);
