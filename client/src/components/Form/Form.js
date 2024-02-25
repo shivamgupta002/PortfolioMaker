@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Form = () => {
-  // const history = useNavigate();
+  const history = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
@@ -61,19 +61,20 @@ const Form = () => {
       setAboutMeError("Please write about yourself");
     }
     try {
-      await axios.post("http://localhost:5000/data", {
-        firstName,
-        lastName,
-        username,
-        email,
-        githubProfile,
-        linkedinProfile,
-        skill,
-        aboutMe,
-      });
-      // .then((res) => {
-      //   history("/templates");
-      // });
+      await axios
+        .post("http://localhost:5000/addData", {
+          firstName,
+          lastName,
+          username,
+          email,
+          githubProfile,
+          linkedinProfile,
+          skill,
+          aboutMe,
+        })
+        .then((res) => {
+          history("/portfolio");
+        });
     } catch (e) {
       alert(e.message);
     }
@@ -228,7 +229,7 @@ const Form = () => {
 
             {/* About Yourself Profile*/}
             <div className="col-md-12">
-              <label htmlFor="skill" className="form-label">
+              <label htmlFor="aboutMe" className="form-label">
                 About Yourself
               </label>
               <textarea
@@ -236,9 +237,9 @@ const Form = () => {
                 className={`form-control ${
                   formSubmitted && !aboutMe && "is-invalid"
                 }`}
-                id="skill"
+                id="aboutMe"
                 placeholder="About Yourself"
-                value={skill}
+                value={aboutMe}
                 onChange={(e) => setAboutMe(e.target.value)}
               />
               {formSubmitted && !aboutMe && (

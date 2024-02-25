@@ -24,19 +24,10 @@ export const addData = async (req, res) => {
       aboutMe
     ) {
       // Check if username is not null or empty string
-      // if (!username.trim()) {
-      //   return res.status(400).json({ message: "Username cannot be empty" });
-      // }
-      console.log(
-        firstName,
-        lastName,
-        username,
-        email,
-        githubProfile,
-        linkedinProfile,
-        skill,
-        aboutMe
-      );
+      if (!username.trim()) {
+        return res.status(400).json({ message: "Username cannot be empty" });
+      }
+      
       const isData = await Data.findOne({ username });
       if (isData) {
         return res
