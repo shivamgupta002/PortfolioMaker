@@ -1,6 +1,6 @@
 import React from "react";
 import "./template1.css";
-const Template1 = () => {
+const Template1 = ({ data }) => {
   return (
     <>
       <div className="body">
@@ -8,7 +8,7 @@ const Template1 = () => {
         <div className="section">
           <div class="col-md-12 text-center mb-4">
             <h1 class="mb-2">My Portfolio</h1>
-            <p>Welcome to my animated portfolio!</p>
+            <p>{data.aboutMe}</p>
           </div>
           <div class="row bg_white section">
             <div className="container ">
@@ -18,10 +18,7 @@ const Template1 = () => {
                   <div className="card">
                     <div className="card-body">
                       <h5 className="card-title">Who Am I?</h5>
-                      <p className="card-text">
-                        I am a passionate developer with expertise in web
-                        technologies.
-                      </p>
+                      <p className="card-text">{data.aboutMe}</p>
                     </div>
                   </div>
                 </div>
@@ -39,9 +36,7 @@ const Template1 = () => {
                 <div className="card">
                   <div className="card-body">
                     <h5 className="card-title">My Skills</h5>
-                    <p className="card-text">
-                      HTML, CSS, JavaScript, Bootstrap, Python, etc.
-                    </p>
+                    <p className="card-text">{data.skill}</p>
                   </div>
                 </div>
               </div>
@@ -59,14 +54,18 @@ const Template1 = () => {
                   <div className="card-body">
                     <h5 className="card-title">Let's Connect</h5>
                     <ul className="list-unstyled">
-                      <li>First Name: John</li>
-                      <li>Last Name: Doe</li>
-                      <li>Email: john.doe@example.com</li>
+                      <li>First Name: {data.firstName}</li>
+                      <li>Last Name: {data.lastName}</li>
+                      <li>Email: {data.email}</li>
                       <li>
-                        Github: <a href="#">github.com/johndoe</a>
+                        Github:{" "}
+                        <a href={data.githubProfile}>{data.githubProfile}</a>
                       </li>
                       <li>
-                        LinkedIn: <a href="#">linkedin.com/in/johndoe</a>
+                        LinkedIn:{" "}
+                        <a href={data.linkedinProfile}>
+                          {data.linkedinProfile}
+                        </a>
                       </li>
                     </ul>
                   </div>

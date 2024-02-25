@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header/Header";
+// import Header from "./components/Header/Header";
 import Form from "./components/Form/Form";
 import Portfolio from "./components/Portfolio/Portfolio";
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Form />} />
           <Route path="/portfolio/:username" element={<Portfolio />} />

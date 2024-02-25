@@ -1,6 +1,6 @@
 import React from "react";
 
-const Template2 = () => {
+const Template2 = ({ data }) => {
   return (
     <>
       <div className="body">
@@ -8,7 +8,7 @@ const Template2 = () => {
           <div class="row">
             <div class="col-md-12 text-center mb-4">
               <h1 class="mb-2">My Portfolio</h1>
-              <p>Welcome to my animated portfolio!</p>
+              <p>{data.aboutMe}</p>
             </div>
           </div>
 
@@ -18,10 +18,7 @@ const Template2 = () => {
               <div class="card">
                 <div class="card-body">
                   <h2 class="card-title">About Me</h2>
-                  <p class="card-text">
-                    I am a passionate developer with expertise in web
-                    technologies.
-                  </p>
+                  <p class="card-text">{data.aboutMe}</p>
                 </div>
               </div>
             </div>
@@ -31,9 +28,7 @@ const Template2 = () => {
               <div class="card">
                 <div class="card-body">
                   <h2 class="card-title">Skills</h2>
-                  <p class="card-text">
-                    HTML, CSS, JavaScript, Bootstrap, Python, etc.
-                  </p>
+                  <p class="card-text">{data.skill}</p>
                 </div>
               </div>
             </div>
@@ -46,14 +41,16 @@ const Template2 = () => {
                 <div class="card-body text-center">
                   <h2 class="card-title">Contact</h2>
                   <ul class="list-unstyled">
-                    <li>First Name: John</li>
-                    <li>Last Name: Doe</li>
-                    <li>Email: john.doe@example.com</li>
+                    <li>First Name: {data.firstName}</li>
+                    <li>Last Name: {data.lastName}</li>
+                    <li>Email: {data.email}</li>
                     <li>
-                      Github: <a href="#">github.com/johndoe</a>
+                      Github:{" "}
+                      <a href={data.githubProfile}>{data.githubProfile}</a>
                     </li>
                     <li>
-                      LinkedIn: <a href="#">linkedin.com/in/johndoe</a>
+                      LinkedIn:{" "}
+                      <a href={data.linkedinProfile}>{data.linkedinProfile}</a>
                     </li>
                   </ul>
                 </div>

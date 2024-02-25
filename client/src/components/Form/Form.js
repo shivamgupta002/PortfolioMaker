@@ -74,7 +74,7 @@ const Form = () => {
           aboutMe,
         })
         .then((res) => {
-          history("/portfolio");
+          history(`/portfolio/${username}`);
         });
     } catch (e) {
       alert(e.message);
