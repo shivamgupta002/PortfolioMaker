@@ -11,7 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Form />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:username" element={<Portfolio />} />
         </Routes>
       </BrowserRouter>
     </>

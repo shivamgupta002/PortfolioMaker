@@ -16,7 +16,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/portfolio">
+                <a className="nav-link" href="/portfolio/:username">
                   Template
                 </a>
               </li>
