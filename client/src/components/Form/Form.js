@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Form = () => {
   const history = useNavigate();
   const [firstName, setFirstName] = useState("");
@@ -83,6 +83,18 @@ const Form = () => {
   return (
     <>
       <div className="container-fluid">
+        <div className="d-flex justify-content-end">
+          <p className="h5" style={{ margin: "10px 0" }}>
+            Already registered?
+          </p>
+          <Link
+            to="/registered"
+            style={{ textDecoration: "none", margin: "10px 2px" }}
+            className="h5"
+          >
+            Click here{" "}
+          </Link>
+        </div>
         <div className="row justify-content-center align-items-center">
           <form className="row g-3 mt-3 col-sm-8" onSubmit={handleSubmit}>
             {/* First Name */}
