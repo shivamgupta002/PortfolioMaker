@@ -2,30 +2,19 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    trim: true,
     required: true,
-    min: 2,
-    max: 20,
   },
   lastName: {
     type: String,
-    trim: true,
     required: true,
-    min: 2,
-    max: 20,
   },
-  userName: {
+  username: {
     type: String,
-    trim: true,
     required: true,
-    unique: true,
   },
   email: {
     type: String,
-    trim: true,
     required: true,
-    unique: true,
-    lowercase: true,
   },
   githubProfile: {
     type: String,
@@ -34,7 +23,6 @@ const userSchema = new mongoose.Schema({
   },
   linkedinProfile: {
     type: String,
-    trim: true,
     required: true,
   },
   skill: {
@@ -44,7 +32,6 @@ const userSchema = new mongoose.Schema({
   },
   aboutMe: {
     type: String,
-    trim: true,
     required: true,
   },
 });
