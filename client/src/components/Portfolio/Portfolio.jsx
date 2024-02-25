@@ -29,8 +29,10 @@ const Portfolio = () => {
 
   return (
     <>
-      {/* <Template1 data={inputs} /> */}
-      <Template2 data={inputs} />
+      <div className="pt-4">
+        {/* <Template1 data={inputs} /> */}
+        <Template2 data={inputs} />
+      </div>
     </>
   );
 };

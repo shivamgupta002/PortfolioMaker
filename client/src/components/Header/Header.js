@@ -16,7 +16,11 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/portfolio/:username">
+                <a
+                  className="nav-link"
+                  href="/"
+                  onClick={() => alert("Please fill the details")}
+                >
                   Template
                 </a>
               </li>
