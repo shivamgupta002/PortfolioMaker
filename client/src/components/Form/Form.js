@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Registered from "../Portfolio/Registered/Registered";
 const Form = () => {
   const history = useNavigate();
   const [firstName, setFirstName] = useState("");
@@ -88,9 +89,10 @@ const Form = () => {
             Already registered?
           </p>
           <Link
-            to="/registered"
             style={{ textDecoration: "none", margin: "10px 2px" }}
             className="h5"
+            data-bs-toggle="modal"
+            data-bs-target="#usernameModal"
           >
             Click here{" "}
           </Link>
@@ -266,6 +268,11 @@ const Form = () => {
           </form>
         </div>
       </div>
+
+      {/* ********************************  Modal  *********************************************** */}
+
+      {/* <!-- Modal --> */}
+      <Registered />
     </>
   );
 };
